@@ -478,6 +478,7 @@
 
     function openMenu() {
       menuOpen = true;
+      header.classList.add('menu-open');
       mainNav.classList.add('nav-open');
       menuToggle.classList.add('is-active');
       menuToggle.setAttribute('aria-label', 'Close menu');
@@ -486,6 +487,7 @@
 
     function closeMenu() {
       menuOpen = false;
+      header.classList.remove('menu-open');
       mainNav.classList.remove('nav-open');
       menuToggle.classList.remove('is-active');
       menuToggle.setAttribute('aria-label', 'Open menu');
