@@ -13,16 +13,10 @@
   var currentPath = window.location.pathname;
   var homePath;
 
-  if (isLocal) {
-    // For local file browsing, use relative paths
-    if (currentPath.indexOf('/danoi.in/') !== -1) {
-      homePath = '../danoi-redesign.html';
-    } else {
-      homePath = './danoi-redesign.html';
-    }
+  if (currentPath.indexOf('/danoi.in/') !== -1) {
+    homePath = '../index.html';
   } else {
-    // For server environments, use absolute paths
-    homePath = '/site/danoi-redesign.html';
+    homePath = './index.html';
   }
 
   // Fix all logo links (Squarespace links logos to index.html)
@@ -43,7 +37,7 @@
   // Fix favicon links (legacy pages still point to Squarespace CDN)
   function fixFavicons() {
     var favicons = document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"], link[rel="shortcut icon"]');
-    var faviconPath = isLocal ? (currentPath.indexOf('/danoi.in/') !== -1 ? '../favicon.png' : './favicon.png') : '/site/favicon.png';
+    var faviconPath = (currentPath.indexOf('/danoi.in/') !== -1) ? '../favicon.png' : './favicon.png';
     
     favicons.forEach(function (icon) {
       icon.setAttribute('href', faviconPath);
