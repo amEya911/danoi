@@ -177,12 +177,13 @@ a {
   -webkit-backdrop-filter: none !important;
   background: transparent !important;
   box-shadow: none !important;
+  transition: none !important; /* Force iOS Safari to drop stacking context immediately */
 }
 
 .site-header.menu-open .logo-text {
   position: relative;
   z-index: 201;
-  color: var(--color-text-light) !important;
+  color: var(--color-text) !important; /* Dark text for white background */
 }
 
 .logo-text {
@@ -257,7 +258,7 @@ a {
 
 /* Hamburger → X animation */
 .menu-toggle.is-active span {
-  background: var(--color-text-light) !important;
+  background: var(--color-text) !important;
 }
 .menu-toggle.is-active span:first-child {
   top: 11px;
@@ -273,7 +274,7 @@ a {
     display: flex;
     position: fixed;
     inset: 0;
-    background: rgba(26, 23, 20, 0.97);
+    background: #ffffff;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -292,7 +293,7 @@ a {
   .main-nav .nav-link {
     font-size: 1.1rem;
     letter-spacing: 0.2em;
-    color: var(--color-text-light);
+    color: var(--color-text);
   }
 
   .menu-toggle {
